@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FULLGAME - The Best Sports Center</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/payment.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">FULL<span>GAME</span></a>
+
+      <div class="navbar-nav">
+        <a href="#men">Men</a>
+        <a href="#women">Woman</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="login.html" id="user-button"><i data-feather="user"></i></a>
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+
+      <!-- Search Form Start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="Search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+      <!-- Search Form End -->
+      
+      <!-- Cart Start -->
+      <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-content">
+        </div>
+        <!-- Total -->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">Rp 0</div>
+        </div>
+        <!-- Buy Button -->
+        <button type="button" class="btn-buy">Buy Now</button>
+        <!-- Cart Close -->
+        <i data-feather="x" id="close-cart"></i>
+      </div>
+      <!-- Cart End -->
+    </nav>
+    <!-- NAVBAR END -->
+
+    <!-- Payment Start -->
+    <!-- Container 1 -->
+    <div class="container-1">
+      <form action="#">
+        <h1 class="form-h1">Payment</h1>
+        <label for="" class="label-Nama">Nama</label>
+        <input type="text" placeholder="Nama Lengkap" class="input-Nama" />
+        <label for="" class="label-hp">No. Handphone</label>
+        <input type="text" placeholder="Nomor Handphone" class="input-hp" />
+        <label for="" class="label-prov">Provinsi</label>
+        <input type="text" placeholder="Provinsi" class="input-prov" />
+        <label for="" class="label-kota">Kota</label>
+        <input type="text" placeholder="Kota" class="input-kota" />
+        <label for="" class="label-kab">Kabupaten</label>
+        <input type="text" placeholder="Kabupaten" class="input-kab" />
+        <label for="" class="label-kel">Kelurahan</label>
+        <input type="text" placeholder="Kelurahan" class="input-kel" />
+        <label for="" class="label-kode">Kode Pos</label>
+        <input type="text" placeholder="Kode Pos" class="input-kode" />
+        <label for="" class="label-alamat">Alamat Lengkap / Patokan</label>
+        <input type="text" placeholder="Alamat Lengkap / Patokan" class="input-alamat" />
+      </form>
+    </div>
+    <!-- Container 1 End -->
+
+    <!-- Container 2 -->
+    <div class="container-2">
+      <p class="shipaddress">Shipping Address</p>
+      <a href="#">Change</a>
+      <div class="container-2-1">
+        <div class="address">
+          <p class="p-nama">Didan Fariz</p>
+          <p>+62-858-123-789</p>
+          <p>Banten</p>
+          <p>Kab. Tangerang</p>
+          <p>Kelapa Dua</p>
+          <p>15144</p>
+          <p>Jl.Kelapa Dua No.50</p>
+        </div>
+      </div>
+    </div>
+    <!-- Container 2 End -->
+
+    <!-- Container 3 -->
+    <div class="container-3">
+      <p class="method">Payment Method</p>
+      <form action="">
+        <input type="radio" name="radio" class="input-ovo">
+        <img src="img/payment/logo-ovo 2.png" alt="Ovo" class="logo-ovo">
+        <input type="radio" name="radio" class="input-gopay">
+        <img src="img/payment/logo-gopay-vector 1.png" alt="Gopay" class="logo-gopay">
+        <input type="radio" name="radio" class="input-sopi">
+        <img src="img/payment/ShopeePay.png" alt="Shopeepay" class="logo-sopi">
+      </form>
+    </div>
+    <!-- Container 3 End -->
+
+    <!-- Container 4 -->
+    <div class="container-4">
+      <div class="brand-1">
+
+      </div>
+      <div class="brand-2">
+
+      </div>
+    </div>
+    <!-- Container 4 End -->
+
+    <!-- Container 5 -->
+    <div class="container-5">
+      <p class="total">Grand Total</p>
+      <p class="subtotal">Subtotal</p>
+      <p class="shipping">Shipping Fee</p>
+      <p class="service">Service Fee</p>
+      <p class="packing">Packing Fee</p>
+      <div class="container-price">
+        <h1 class="keseluruhan">Total</h1>
+      </div>
+      <button class="button-bayar">Bayar</button>
+      <button class="button-batal">Batal</button>
+    </div>
+    <!-- Container 5 End -->
+    <!-- Payment End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+      <div class="footer-left">
+          <h3>Payment Method</h3>
+          <div class="payment">
+            <img src="img/payment/logo-gopay-vector 1.png" alt="">
+            <img src="img/payment/ShopeePay.png" alt="">
+            <img src="img/payment/logo-ovo 2.png" alt="">
+          </div>
+          <p class="footer-copyright">The Troller | &copy; 2023</p>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Indonesia</span> Banten, Kelapa Dua</p>
+        </div>
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+62-858-9206-7750</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="#">thetroller@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-about">
+          <span>About</span>
+          FULLGAME is an sport brand and focused on men's and woman's clothing products.
+        </p>
+
+        <div class="footer-media">
+          <a href="https://www.linkedin.com/in/didan-fariz-4a8ba422b/"> <i class="fa fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/didan.fariz"> <i class="fa fa-facebook"></i></a>
+          <a href="https://github.com/didanfarizz/didanfarizz.github.io"> <i class="fa fa-github"></i></a>
+          <a href="https://www.instagram.com/didanfarizz/"> <i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
