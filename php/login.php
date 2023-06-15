@@ -14,7 +14,33 @@ if( isset($_POST["signup"]) ) {
 
 }
 
+if( isset($_POST["login"]) ) {
+
+   $user_email = $_POST["emailAdress"];
+   $password = $_POST["password"];
+
+   $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+
+   // cek username
+   if( mysqli_num_rows($result) === 1 ) {
+
+      // cek password
+      $row = mysqli_fetch_assoc($result);
+      if( password_verify($password, $row["password"]) ) {
+         header("location: index.html");
+         exit;
+      }
+   }
+
+   $error = true;
+
+}
+
 ?>
+
+<?php if( isset($error) ) : ?>
+   <p style="color: red; font-style: italic;">username / password salah! </p>
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en" >
