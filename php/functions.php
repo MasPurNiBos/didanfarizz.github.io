@@ -2,14 +2,14 @@
 function register($data) {
     global $conn;
 
-    $user_fullname = strtolower(stripslashes($data["username"]));
-    $user_email = mysqli_real_escape_string($conn, $data["emailAdress"]);
-    $user_number = mysqli_real_escape_string($conn, $data["phone"]);
+    $fullname = strtolower(stripslashes($data["fullname"]));
+    $email = mysqli_real_escape_string($conn, $data["email"]);
+    $number = mysqli_real_escape_string($conn, $data["number"]);
     $password = mysqli_real_escape_string($conn, $data["password"]);
-    $password2 =  mysqli_real_escape_string($conn, $data["passwordCon"]);
+    $password2 =  mysqli_real_escape_string($conn, $data["password2"]);
 
     // cek username sudah ada
-    $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$fullname'");
     
     if( mysqli_fetch_assoc($result) ){
         echo "<script>
@@ -31,7 +31,7 @@ function register($data) {
     
 
     // tambahkan userbaru ke database
-    mysqli_query($conn, "INSERT INTO user VALUES('', '$user_fullname', '$user_email', '$user_number', '$password')");
+    mysqli_query($conn, "INSERT INTO user VALUES('', '$fullname', '$email', '$number', '$password')");
 
     return mysqli_affected_rows($conn);
 }

@@ -1,4 +1,11 @@
 <?php
+
+$koneksi = mysqli_connect("localhost","root","","login_fullgame");
+
+if (mysqli_connect_errno()){
+    echo "Koneksi database gagal : " . mysqli_connect_error();
+}
+
 require 'functions.php';
 
 if( isset($_POST["signup"]) ) {
@@ -16,10 +23,10 @@ if( isset($_POST["signup"]) ) {
 
 if( isset($_POST["login"]) ) {
 
-   $user_email = $_POST["emailAdress"];
+   $email = $_POST["email"];
    $password = $_POST["password"];
 
-   $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+   $result = mysqli_query($conn, "SELECT * FROM users WHERE fullname = '$fullname'");
 
    // cek username
    if( mysqli_num_rows($result) === 1 ) {
@@ -48,7 +55,7 @@ if( isset($_POST["login"]) ) {
   <meta charset="UTF-8">
   <title>CodePen - Responsive Signup/Login form | Nothing4us</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="css/login.css">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="login.css">
 
 </head>
 <body>
@@ -82,16 +89,16 @@ if( isset($_POST["login"]) ) {
                <form class="login-form" action="#" method="post">
                   <div class="form-group">
                      <label for="loginemail">Email Adderss</label>
-                     <input type="email" name="loginemail" id="loginemail" required>
+                     <input type="email" name="email" id="email" required>
                   </div>
 
                   <div class="form-group">
                      <label for="loginPassword">Password</label>
-                     <input type="password" name="loginPassword" id="loginPassword" required>
+                     <input type="password" name="password" id="password" required>
                   </div>
 
                   <div class="CTA">
-                     <input type="submit" value="Login">
+                     <input type="submit" name="login" value="Login" id="login">
                      <a href="#" class="switch">I'm New</a>
                   </div>
                </form>
@@ -110,13 +117,13 @@ if( isset($_POST["login"]) ) {
 
                   <div class="form-group">
                      <label for="email">Email Adderss</label>
-                     <input type="email" name="emailAdress" id="email" class="email">
+                     <input type="email" name="email" id="email" class="email">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
                      <label for="phone">Phone Number - <small>Optional</small></label>
-                     <input type="text" name="phone" id="phone">
+                     <input type="text" name="number" id="number">
                   </div>
 
                   <div class="form-group">
@@ -127,12 +134,12 @@ if( isset($_POST["login"]) ) {
 
                   <div class="form-group">
                      <label for="passwordCon">Confirm Password</label>
-                     <input type="password" name="passwordCon" id="passwordCon" class="passConfirm">
+                     <input type="password" name="password2" id="password2" class="passConfirm">
                      <span class="error"></span>
                   </div>
 
                   <div class="CTA">
-                     <input type="submit" name='signup' value="Signup Now" id="submit">
+                     <input type="submit" name='signup' value="Signup Now" id="signup">
                      <a href="#" class="switch">I have an account</a>
                   </div>
                   
@@ -147,7 +154,7 @@ if( isset($_POST["login"]) ) {
 
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="js/login.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script src="login.js"></script>
 
 </body>
 </html>
