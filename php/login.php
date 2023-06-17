@@ -33,7 +33,7 @@ if( isset($_POST["login"]) ) {
    $email = $_POST["email"];
    $password = $_POST["password"];
 
-   $result = mysqli_query($conn, "SELECT * FROM users WHERE fullname = '$fullname'");
+   $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
 
    // cek username
    if( mysqli_num_rows($result) === 1 ) {
@@ -118,7 +118,7 @@ if( isset($_POST["login"]) ) {
 
                   <div class="form-group">
                      <label for="name">Full Name</label>
-                     <input type="text" name="username" id="name" class="name">
+                     <input type="text" name="fullname" id="fullname" class="name">
                      <span class="error"></span>
                   </div>
 
