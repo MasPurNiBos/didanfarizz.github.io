@@ -1,9 +1,16 @@
 <?php
+$host="localhost";
+$user="root";
+$password="";
+$database="login_fullgame";
+
 
 $koneksi = mysqli_connect("localhost","root","","login_fullgame");
 
-if (mysqli_connect_errno()){
-    echo "Koneksi database gagal : " . mysqli_connect_error();
+if ($koneksi){
+   echo "berhasil";
+}else{
+   echo"gagal";
 }
 
 require 'functions.php';

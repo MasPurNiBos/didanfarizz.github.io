@@ -31,7 +31,7 @@ function register($data) {
     
 
     // tambahkan userbaru ke database
-    mysqli_query($conn, "INSERT INTO user VALUES('', '$fullname', '$email', '$number', '$password')");
+    mysqli_query($conn, "INSERT INTO users VALUES('', '$fullname', '$email', '$number', '$password')");
 
     return mysqli_affected_rows($conn);
 }
