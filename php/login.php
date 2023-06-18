@@ -16,17 +16,17 @@ if( isset($_POST["submit"]) ) {
 
 if( isset($_POST["login"]) ) {
 
-   $email = $_POST["email"];
-   $password = $_POST["password"];
+   $loginemail = $_POST["email"];
+   $loginPassword = $_POST["password"];
 
-   $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
+   $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$loginemail'");
 
    // cek username
    if( mysqli_num_rows($result) === 1 ) {
 
       // cek password
       $row = mysqli_fetch_assoc($result);
-      if( password_verify($password, $row["password"]) ) {
+      if( password_verify($loginPassword, $row["password"]) ) {
          header("location: index.html");
          exit;
       }
@@ -81,7 +81,7 @@ if( isset($_POST["login"]) ) {
             <div class="login form-peice switched">
                <form class="login-form" action="" method="post">
                   <div class="form-group">
-                     <label for="loginemail">Email Adderss</label>
+                     <label for="loginemail">Email Address</label>
                      <input type="email" name="loginemail" id="loginemail" required>
                   </div>
 
@@ -109,13 +109,13 @@ if( isset($_POST["login"]) ) {
                   </div>
 
                   <div class="form-group">
-                     <label for="email">Email Adderss</label>
+                     <label for="email">Email Address</label>
                      <input type="email" name="email" id="email" class="email">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="phone">Phone Number - <small>Optional</small></label>
+                     <label for="phone">Phone Number</label>
                      <input type="text" name="phone" id="phone">
                   </div>
 

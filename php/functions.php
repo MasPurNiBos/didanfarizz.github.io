@@ -16,11 +16,11 @@ if ($koneksi){
 function register($data) {
     global $conn;
 
-    $fullname = strtolower(stripslashes($data["name"]));
-    $email = mysqli_real_escape_string($conn, $data["email"]);
-    $number = mysqli_real_escape_string($conn, $data["number"]);
+    $fullname = strtolower($data["name"]);
+    $email = ($data["email"]);
+    $number = ($data["phone"]);
     $password = mysqli_real_escape_string($conn, $data["password"]);
-    $password2 =  mysqli_real_escape_string($conn, $data["passwordCon"]);
+    $passwordCon =  mysqli_real_escape_string($conn, $data["passwordCon"]);
 
     // cek username sudah ada
     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$fullname'");
@@ -33,7 +33,7 @@ function register($data) {
     }
 
     // cek konfirmasi pasword
-    if ( $password !== $password2 ){
+    if ( $password !== $passwordCon ){
         echo "<script>
                 alert('password tidak sesuai!')       
               </script>";
