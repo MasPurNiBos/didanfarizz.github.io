@@ -1,12 +1,26 @@
 <?php
+$host="localhost";
+$user="root";
+$password="";
+$database="login_fullgame";
+
+
+$koneksi = mysqli_connect("localhost","root","","login_fullgame");
+
+if ($koneksi){
+   echo "berhasil";
+}else{
+   echo"gagal";
+}
+
 function register($data) {
     global $conn;
 
-    $fullname = strtolower(stripslashes($data["fullname"]));
+    $fullname = strtolower(stripslashes($data["name"]));
     $email = mysqli_real_escape_string($conn, $data["email"]);
     $number = mysqli_real_escape_string($conn, $data["number"]);
     $password = mysqli_real_escape_string($conn, $data["password"]);
-    $password2 =  mysqli_real_escape_string($conn, $data["password2"]);
+    $password2 =  mysqli_real_escape_string($conn, $data["passwordCon"]);
 
     // cek username sudah ada
     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$fullname'");

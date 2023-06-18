@@ -1,18 +1,4 @@
 <?php
-$host="localhost";
-$user="root";
-$password="";
-$database="login_fullgame";
-
-
-$koneksi = mysqli_connect("localhost","root","","login_fullgame");
-
-if ($koneksi){
-   echo "berhasil";
-}else{
-   echo"gagal";
-}
-
 require 'functions.php';
 
 if( isset($_POST["submit"]) ) {
@@ -60,7 +46,7 @@ if( isset($_POST["login"]) ) {
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Responsive Signup/Login form | Nothing4us</title>
+  <title>FULLGAME - The Best Sports Center</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="login.css">
 
@@ -93,7 +79,7 @@ if( isset($_POST["login"]) ) {
 
             <!-- Login Form -->
             <div class="login form-peice switched">
-               <form class="login-form" action="#" method="post">
+               <form class="login-form" action="" method="post">
                   <div class="form-group">
                      <label for="loginemail">Email Adderss</label>
                      <input type="email" name="loginemail" id="loginemail" required>
@@ -114,17 +100,17 @@ if( isset($_POST["login"]) ) {
 
             <!-- Signup Form -->
             <div class="signup form-peice">
-               <form class="signup-form" action="#" method="post">
+               <form class="signup-form" action="" method="post">
 
                   <div class="form-group">
                      <label for="name">Full Name</label>
-                     <input type="text" name="username" id="name" class="name">
+                     <input type="text" name="name" id="name" class="name">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
                      <label for="email">Email Adderss</label>
-                     <input type="email" name="emailAdress" id="email" class="email">
+                     <input type="email" name="email" id="email" class="email">
                      <span class="error"></span>
                   </div>
 
@@ -146,7 +132,7 @@ if( isset($_POST["login"]) ) {
                   </div>
 
                   <div class="CTA">
-                     <input type="submit" value="Signup Now" id="submit">
+                     <input type="submit" value="Signup Now" name="submit" id="submit">
                      <a href="#" class="switch">I have an account</a>
                   </div>
                   
